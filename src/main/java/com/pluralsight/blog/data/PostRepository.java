@@ -13,5 +13,6 @@ import com.pluralsight.blog.model.*;
 @RestResource
 public interface PostRepository extends JpaRepository<Post, Long> {
 
+	@RestResource(rel = "contains-title", path = "containsTitle")
 	List<Post> findByTitleContaining(@Param("title") String title);
 }
